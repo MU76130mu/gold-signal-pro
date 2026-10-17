@@ -1,1 +1,226 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d18">
+<title>GOLD SIGNAL PRO</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #090d18;
+    color: #f4f6fc;
+}
+
+header {
+    padding: 24px 15px;
+    text-align: center;
+    background: linear-gradient(135deg,#121c31,#080b14);
+    border-bottom: 1px solid #28344c;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #f5c451;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #9daac0;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: #aab6ca;
+    font-size: 12px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #f5bd45;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 12px;
+}
+
+.card {
+    background: #111827;
+    border: 1px solid #27334a;
+    border-radius: 14px;
+    padding: 17px;
+    margin-bottom: 14px;
+}
+
+.card-title {
+    font-size: 13px;
+    color: #9daac0;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: clamp(21px,4vw,30px);
+    font-weight: bold;
+    color: #f5c451;
+    direction: ltr;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.unit {
+    font-size: 11px;
+    color: #8290a8;
+    margin-top: 8px;
+}
+
+.section-title {
+    font-size: 17px;
+    margin: 25px 0 13px;
+    color: #f5c451;
+}
+
+.signal-box {
+    text-align: center;
+    padding: 24px 15px;
+}
+
+.signal-badge {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    background: #293144;
+    color: #e8edf7;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.signal-description {
+    font-size: 13px;
+    line-height: 2;
+    color: #aab6ca;
+}
+
+.levels {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.level {
+    background: #0b1220;
+    border-radius: 9px;
+    padding: 14px 8px;
+    border: 1px solid #27334a;
+}
+
+.level-label {
+    font-size: 11px;
+    color: #9daac0;
+    margin-bottom: 9px;
+}
+
+.level-value {
+    font-weight: bold;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+    direction: ltr;
+}
+
+.chart-frame {
+    height: 480px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #111827;
+    border: 1px solid #27334a;
+}
+
+.chart-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.note {
+    background: #211b12;
+    color: #e8c982;
+    padding: 14px;
+    border: 1px solid #514127;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 2;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    color: #68768d;
+    padding: 25px 10px;
+    font-size: 11px;
+    line-height: 2;
+}
+
+button {
+    background: #f5c451;
+    color: #111827;
+    border: 0;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+@media(max-width:520px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-frame {
+        height: 390px;
+    }
+
+    .container {
+        padding: 11px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">GOLD SIGNAL PRO</div>
+    <div class="subtitle">
+        تحلیل تکنیکال طلا | نمودار یک‌دقیقه‌ای | ابزار اسکالپ
+    </div>
+</header>
+
+<main class="container">
+
+    <div class="status">
+        <span class="dot"></span>
+        <span id="connectionStatus">در حال اتصال به اطلاعات
